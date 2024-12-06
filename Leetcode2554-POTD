@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int maxCount(vector<int>& banned, int n, int maxSum) {
+        std:: unordered_set<int>Bandset (banned.begin(),banned.end());
+        
+        int count=0;
+        int possibleSum=0;
+    for(int i=1;i<=n;++i){
+if(Bandset.find(i)!=Bandset.end()){
+    continue;
+}
+if(possibleSum +i >maxSum){
+    break;
+}
+possibleSum+=i;
+count++;
+
+    }
+    return count;
+    }
+};
